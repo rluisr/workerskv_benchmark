@@ -14,7 +14,6 @@ func BenchmarkWriteKV(b *testing.B) {
 			b.Error(err)
 		}
 	}
-	b.StopTimer()
 }
 
 func BenchmarkReadKV(b *testing.B) {

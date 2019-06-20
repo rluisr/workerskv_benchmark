@@ -14,7 +14,6 @@ func BenchmarkWriteMem(b *testing.B) {
 			b.Error(err)
 		}
 	}
-	b.StopTimer()
 }
 
 func BenchmarkReadMem(b *testing.B) {
