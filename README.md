@@ -1,6 +1,6 @@
 workerskv_benchmark
 ===================
-Benchmark [Cloudflare Workers KV](https://developers.cloudflare.com/workers/kv/) with memcache.  
+Benchmark [Cloudflare Workers KV](https://developers.cloudflare.com/workers/kv/) with official sdk. 
 memcache server is [memcachier](https://www.memcachier.com/)'s free plan.
 
 ```
