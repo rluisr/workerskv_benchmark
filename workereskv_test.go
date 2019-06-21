@@ -50,6 +50,21 @@ func BenchmarkReadKV_Parallel160(b *testing.B) {
 }
 */
 
+func BenchmarkWriteKV_Parallel160(b *testing.B) {
+	kv := NewKV()
+
+	b.SetParallelism(10)
+	b.ResetTimer()
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			err := kv.write("key", "value")
+			if err != nil {
+				b.Error(err)
+			}
+		}
+	})
+}
+
 func BenchmarkReadKV_Parallel160(b *testing.B) {
 	kv := NewKV()
 

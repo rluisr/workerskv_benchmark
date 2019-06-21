@@ -1,19 +1,11 @@
 workerskv_benchmark
 ===================
 Benchmark [Cloudflare Workers KV](https://developers.cloudflare.com/workers/kv/) with official sdk.  
-memcache server is [memcachier](https://www.memcachier.com/)'s free plan.
+You can compare own memcache server with WorkersKV. See [memcache.go](memcache.go).
 
 ```
-$ go test -bench . -benchmem
-goos: windows
-goarch: amd64
-pkg: workerskv-benchmark
-BenchmarkWriteMem-16                 200           8696971 ns/op              73 B/op          3 allocs/op
-BenchmarkReadMem-16                  200           9917228 ns/op             152 B/op          4 allocs/op
-BenchmarkWriteKV-16                    1        1191774700 ns/op          444056 B/op       7953 allocs/op
-BenchmarkReadKV-16                     2        1196770400 ns/op           15292 B/op        108 allocs/op
-PASS
-ok      workerskv-benchmark     9.358s
+BenchmarkWriteKV-16                            3         420761100 ns/op           58597 B/op        125 allocs/op
+BenchmarkReadKV-16                             5         362196140 ns/op           12107 B/op        102 allocs/op
+BenchmarkWriteKV_Parallel160-16                5        1077852620 ns/op           94801 B/op        722 allocs/op
+BenchmarkReadKV_Parallel160-16                 5         247583660 ns/op           14038 B/op        143 allocs/op
 ```
-
-About 1sec per operation.
