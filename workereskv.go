@@ -7,9 +7,11 @@ import (
 	"github.com/cloudflare/cloudflare-go"
 )
 
+var count = 0
+
 type KV struct {
-	API  *cloudflare.API
-	ID   string
+	API *cloudflare.API
+	ID  string
 }
 
 func NewKV() *KV {
@@ -19,8 +21,8 @@ func NewKV() *KV {
 	}
 
 	return &KV{
-		API:  api,
-		ID:   os.Getenv("CF_WORKERSKV_ID"),
+		API: api,
+		ID:  os.Getenv("CF_WORKERSKV_ID"),
 	}
 }
 
